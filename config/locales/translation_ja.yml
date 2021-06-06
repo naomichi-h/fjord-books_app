@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      book: 本 #g
+
+    attributes:
+      book:
+        author: 著者 #g
+        memo: メモ #g
+        picture: 画像 #g
+        title: 題名 #g
+
+  title:
+    Books: 本一覧
+    Editing Book: 本編集
+
+  button:
+    Show: 詳細
+    Edit: 編集
+    Destroy: 削除
+    Back: 戻る
+    New Book: 新規作成
+
+  message:
+    Book was successfully created: メモの新規作成に成功しました.
+    Book was successfully updated: メモの更新に成功しました。
+    Book was successfully destroyed: メモの削除に成功しました。
+    Are you sure?: よろしいですか？
