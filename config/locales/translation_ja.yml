@@ -12,7 +12,7 @@ ja:
 
   title:
     Books: 本一覧
-    Editing Book: 本編集
+    Editing_Book: 本編集
 
   button:
     Show: 詳細
@@ -22,7 +22,7 @@ ja:
     New Book: 新規作成
 
   message:
-    Book was successfully created: メモの新規作成に成功しました.
-    Book was successfully updated: メモの更新に成功しました。
-    Book was successfully destroyed: メモの削除に成功しました。
-    Are you sure?: よろしいですか？
+    Book_was_successfully_created: メモの新規作成に成功しました.
+    Book_was_successfully_updated: メモの更新に成功しました。
+    Book_was_successfully_destroyed: メモの削除に成功しました。
+    Are_you_sure?: よろしいですか？

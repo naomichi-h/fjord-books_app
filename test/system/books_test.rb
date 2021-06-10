@@ -20,7 +20,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in 'Title', with: @book.title
     click_on 'Create Book'
 
-    assert_text 'Book was successfully created'
+    assert_text 'Book_was_successfully_created'
     click_on 'Back'
   end
 
@@ -32,7 +32,7 @@ class BooksTest < ApplicationSystemTestCase
     fill_in 'Title', with: @book.title
     click_on 'Update Book'
 
-    assert_text 'Book was successfully updated'
+    assert_text 'Book_was_successfully_updated'
     click_on 'Back'
   end
 
@@ -42,6 +42,6 @@ class BooksTest < ApplicationSystemTestCase
       click_on 'Destroy', match: :first
     end
 
-    assert_text 'Book was successfully destroyed'
+    assert_text 'Book_was_successfully_destroyed'
   end
 end

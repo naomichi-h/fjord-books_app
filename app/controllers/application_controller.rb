@@ -4,6 +4,6 @@ class ApplicationController < ActionController::Base
   private
 
   def default_url_options(options = {})
-    { locale: I18n.locale }.merge options
+    options.merge({ locale: I18n.locale })
   end
 end

@@ -12,7 +12,7 @@ en:
 
   title:
     Books: Books
-    Editing Book: Editing Book
+    Editing_Book: Editing_Book
 
   button:
     Show: Show
@@ -22,7 +22,7 @@ en:
     New Book: New Book
 
   message:
-    Book was successfully created: Book was successfully created.
-    Book was successfully updated: Book was successfully updated.
-    Book was successfully destroyed: Book was successfully destroyed.
-    Are you sure?: Are you sure?
+    Book_was_successfully_created: Book_was_successfully_created.
+    Book_was_successfully_updated: Book_was_successfully_updated.
+    Book_was_successfully_destroyed: Book_was_successfully_destroyed.
+    Are_you_sure?: Are_you_sure?
