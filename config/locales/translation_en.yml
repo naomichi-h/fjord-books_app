@@ -11,18 +11,18 @@ en:
         title: Title #g
 
   title:
-    Books: Books
-    Editing_Book: Editing_Book
+    books: Books
+    editing_book: Editing Book
 
   button:
-    Show: Show
-    Edit: Edit
-    Destroy: Destroy
-    Back: Back
-    New Book: New Book
+    show: Show
+    edit: Edit
+    destroy: Destroy
+    back: Back
+    create: New Book
 
   message:
-    Book_was_successfully_created: Book_was_successfully_created.
-    Book_was_successfully_updated: Book_was_successfully_updated.
-    Book_was_successfully_destroyed: Book_was_successfully_destroyed.
-    Are_you_sure?: Are_you_sure?
+    created: Book was successfully created.
+    updated: Book was successfully updated.
+    destroyed: Book was successfully destroyed.
+    confirm: Are You sure?
