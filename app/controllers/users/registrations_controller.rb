@@ -40,10 +40,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   protected
 
-  def after_update_path_for(resource)
+  def after_update_path_for(_resource)
     edit_user_registration_path # アカウント編集後に遷移するpath
   end
-
 
   # If you have extra params to permit, append them to the sanitizer.
   # def configure_sign_up_params
