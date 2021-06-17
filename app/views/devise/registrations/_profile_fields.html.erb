@@ -20,5 +20,10 @@
 
 <div class="field">
   <%= f.label :image %>
-  <%= f.file_field :image %>
+  <%= f.file_field :image, accept: 'image/jpg, image/jpeg, image/gif' %>
+</div>
+
+<div class="field">
+  <%= f.label :image_now %>
+  <%= image_tag @user.image.variant(resize: "100x100") if @user.image.present? %>
 </div>
