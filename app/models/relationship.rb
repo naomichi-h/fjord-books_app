@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Relationship < ApplicationRecord
   belongs_to :following_user, class_name: 'User'
   belongs_to :followed_user, class_name: 'User'
