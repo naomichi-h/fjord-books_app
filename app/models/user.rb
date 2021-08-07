@@ -6,10 +6,10 @@ class User < ApplicationRecord
 
   has_one_attached :avatar
 
-  has_many :relationships_of_following_users, class_name: 'Relationship', foreign_key: 'following_user_id', dependent: :destroy, inverse_of: :following_user
+  has_many :relationships_of_following_users, class_name: 'Following', foreign_key: 'following_user_id', dependent: :destroy, inverse_of: :following_user
   has_many :following_users, through: :relationships_of_following_users, source: :followed_user
 
-  has_many :relationships_of_followed_users, class_name: 'Relationship', foreign_key: 'followed_user_id', dependent: :destroy, inverse_of: :followed_user
+  has_many :relationships_of_followed_users, class_name: 'Following', foreign_key: 'followed_user_id', dependent: :destroy, inverse_of: :followed_user
   has_many :followed_users, through: :relationships_of_followed_users, source: :following_user
 
   # ユーザーをフォローする

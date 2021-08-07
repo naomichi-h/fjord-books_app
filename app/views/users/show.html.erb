@@ -38,7 +38,7 @@
 
 <% unless @user == current_user %>
 <% if current_user.following?(@user) %>
-<%= link_to t("views.common.unfollow"), relationship_path(@relationship), method: :delete %>
+<%= link_to t("views.common.unfollow"), following_path(@following), method: :delete %>
 <% else %>
 <%= form_for(@user.relationships_of_following_users.build) do |f| %>
 <%= hidden_field_tag :user_id, @user.id %>
