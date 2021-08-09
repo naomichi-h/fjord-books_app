@@ -4,6 +4,7 @@ ja:
       book: 本  #g
       user: ユーザ
       report: 日報
+      comment: コメント
 
     attributes:
       book:
@@ -14,7 +15,7 @@ ja:
       user:
         name: 氏名
         postal_code: 郵便番号
-        address: 住所s
+        address: 住所
         self_introduction: 自己紹介文
         avatar: ユーザ画像
       report:
@@ -22,3 +23,7 @@ ja:
         content: 本文
         user: 投稿者
         created_at: 投稿日時
+      comment:
+        user: 投稿者
+        created_at: 投稿日時
+        content: 内容

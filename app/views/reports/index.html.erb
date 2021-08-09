@@ -18,7 +18,13 @@
     <tr>
       <td><%= report.title %></td>
       <td><%= report.content %></td>
-      <td><%= report.user.name %></td>
+      <td>
+        <% if report.user.name.empty? %>
+        <%= report.user.email %>
+        <% else %>
+        <%= report.user.name %>
+        <% end %>
+      </td>
       <td><%= report.created_at %></td>
       <td><%= link_to t('views.common.show'), report %></td>
       <% if current_user.id == report.user_id %>
