@@ -8,7 +8,8 @@ class FollowingsController < ApplicationController
   end
 
   def destroy
+    user_id = Following.find(params[:id]).followed_user_id
     Following.find(params[:id]).destroy
-    redirect_to controller: :users, action: :show, id: params[:id]
+    redirect_to controller: :users, action: :show, id: user_id
   end
 end
