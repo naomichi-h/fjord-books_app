@@ -28,12 +28,26 @@
 <p>
   <strong><%= User.human_attribute_name(:avatar) %>:</strong>
   <% if @user.avatar.attached? %>
-    <br>
-    <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
+  <br>
+  <%= image_tag @user.avatar.variant(resize_to_fill: [150, 150])%>
   <% end %>
 </p>
 
+<p><%= link_to "#{t('views.common.followings')}: #{@user.following_users.count}", followings_user_path(@user.id) %></p>
+<p><%= link_to "#{t('views.common.followers')}: #{@user.followed_users.count}", followers_user_path(@user.id) %></p>
+
+<% unless @user == current_user %>
+<% if current_user.following?(@user) %>
+<%= link_to t("views.common.unfollow"), following_path(@following), method: :delete %>
+<% else %>
+<%= form_for(@user.relationships_of_following_users.build) do |f| %>
+<%= hidden_field_tag :user_id, @user.id %>
+<%= f.submit t("views.common.follow"), class: 'btn btn-primary btn-block' %>
+<% end %>
+<% end %>
+<% end %>
+
 <% if current_user == @user %>
-  <%= link_to t('views.common.edit'), edit_user_registration_path %> |
+<%= link_to t('views.common.edit'), edit_user_registration_path %> |
 <% end %>
 <%= link_to t('views.common.back'), users_path %>

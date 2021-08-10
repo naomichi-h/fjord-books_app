@@ -1,0 +1,9 @@
+<h1><%= t('views.common.show_followers', name: User.model_name.human) %></h1>
+<% @followers.each do |user| %>
+<table>
+  <tr>
+    <td> <%= user.email %> </td>
+    <td><%= link_to t("views.common.profile"), user_path(user) %></td>
+  </tr>
+</table>
+<% end %>
