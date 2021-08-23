@@ -8,19 +8,17 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
     @comment.user_id = current_user.id
 
-    respond_to do |format|
       if @comment.save
-        format.html { redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human) }
+        redirect_to @commentable, notice: t('controllers.common.notice_create', name: Comment.model_name.human)
       else
-        format.html { redirect_to @commentable, notice: 'Comment was not successfully created.' }
+        redirect_to @commentable, notice: 'Comment was not successfully created.'
       end
-    end
   end
 
   private
 
   # Only allow a list of trusted parameters through.
   def comment_params
-    params.require(:comment).permit(:content, :user_id)
+    params.require(:comment).permit(:content)
   end
 end

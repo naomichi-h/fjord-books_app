@@ -20,7 +20,7 @@
         <%= comment.user.name %>
         <% end %>
       </td>
-      <td><%= comment.created_at %></td>
+      <td><%= l(comment.created_at) %></td>
       <td><%= comment.content %></td>
     </tr>
     <% end %>
