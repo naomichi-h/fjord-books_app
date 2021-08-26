@@ -1,11 +1,6 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  user: one
-  title: MyString
-  content: MyText
-
-two:
-  user: two
-  title: MyString
-  content: MyText
+gorukamu:
+  user: alice
+  title: ゴールデンカムイ読んだ感想
+  content: あらゆる意味でとんでもない漫画
