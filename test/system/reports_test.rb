@@ -13,8 +13,9 @@ class ReportsTest < ApplicationSystemTestCase
   end
 
   test 'visiting the index' do
-    visit reports_url
+    visit reports_path
     assert_selector 'h1', text: '日報'
+    assert_text '新規作成'
   end
 
   test 'creating a Report' do
