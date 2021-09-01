@@ -3,53 +3,42 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
+  setup do
+    @alice = users(:alice)
+    @bob = users(:bob)
+  end
+
   test '#name_or_email' do
-    user = User.new(email: 'foo@example.com', name: '')
+    assert_equal 'alice@example.com', @alice.name_or_email
 
-    assert_equal 'foo@example.com', user.name_or_email
+    @alice.name = 'alice'
 
-    user.name = 'Foo Bar'
-
-    assert_equal 'Foo Bar', user.name_or_email
+    assert_equal 'alice', @alice.name_or_email
   end
 
   test '#follow' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    @alice.follow(@bob)
 
-    me.follow(she)
-
-    assert me.following?(she)
+    assert @alice.following?(@bob)
   end
 
   test '#unfollow' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    @alice.follow(@bob)
+    @alice.unfollow(@bob)
 
-    me.follow(she)
-    me.unfollow(she)
-
-    assert_not me.following?(she)
+    assert_not @alice.following?(@bob)
   end
 
   test '#following?' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    @alice.follow(@bob)
 
-    me.follow(she)
-
-    assert me.following?(she)
-    assert_not she.following?(me)
+    assert @alice.following?(@bob)
   end
 
   test '#followed_by?' do
-    me = User.create!(email: 'me@example.com', password: 'password')
-    she = User.create!(email: 'she@example.com', password: 'password')
+    @alice.follow(@bob)
 
-    me.follow(she)
-
-    assert she.followed_by?(me)
-    assert_not me.followed_by?(she)
+    assert @bob.followed_by?(@alice)
   end
 
 end
